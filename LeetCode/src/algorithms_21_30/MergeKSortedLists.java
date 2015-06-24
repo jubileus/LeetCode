@@ -1,18 +1,28 @@
-package algorithms_20_30;
+package algorithms_21_30;
 
-public class MergeTwoSortedLists {
+import algorithms_21_30.MergeTwoSortedLists.ListNode;
 
-	public static class ListNode {
-		int val;
-		ListNode next;
-		ListNode(int x) { val = x; }
-	}
-	
+public class MergeKSortedLists {
+
 	public static void main(String[] args) {
 
 	}
 
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    public ListNode mergeKLists(ListNode[] lists) {
+        if(lists==null||lists.length==0)//空数组时直接返回null
+        	return null;
+        return split(lists, 0, lists.length-1);
+    }
+    
+    private ListNode split(ListNode[] lists,int low,int high){
+    	if(low<high){
+    		int middle=(low+high)/2;//将lists二分，直至分至单独的ListNode
+    		return mergeTwoLists(split(lists, low, middle), split(lists,middle+1,high));
+    	}
+    	return lists[low];//当low<high时，说明已分解至单个的ListNode
+    }
+    
+    private ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if(l1==null&&l2==null)//输入为两个空串，返回null
         	return null;
         else if(l1==null&&l2!=null)//l1是空串，l2不空，返回l2

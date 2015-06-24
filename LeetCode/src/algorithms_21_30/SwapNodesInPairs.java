@@ -1,4 +1,4 @@
-package algorithms_20_30;
+package algorithms_21_30;
 
 public class SwapNodesInPairs {
 

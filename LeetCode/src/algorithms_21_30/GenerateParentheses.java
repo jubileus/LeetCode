@@ -1,4 +1,4 @@
-package algorithms_20_30;
+package algorithms_21_30;
 
 import java.util.ArrayList;
 import java.util.List;
