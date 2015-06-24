@@ -1,4 +1,4 @@
-package algorithms_1_10;
+package algorithms_01_10;
 
 public class LongestSubstringWithoutRepeatingCharacters {
 
